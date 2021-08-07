@@ -8,31 +8,21 @@ const redSquare = document.getElementById('red-square');
 
 
 
-
-// try to make the function for movement outside of the event
-const moveRight = () => {
-  blueSquare += 50;
-}
-
-
-
-
 // create event listener for blue square
-// arrow right
 document.addEventListener('keydown', (e) => {
   if (e.code === "ArrowRight") {
     console.log("blue move")
     // on arrow right, move right +50px
-    blueSquare.style.left = "50px"
+    blueSquare.style.left += "50px"
   }
 });
 
 // create event listener for red square
-// arrow right
 document.addEventListener('keydown', (e) => {
   if (e.code === "ArrowUp") {
     console.log("red move")
     // on arrow up, move right +30px
+    redSquare.style.left += "30px"
   }
 });
 
@@ -53,4 +43,6 @@ but for some reason, it only works on the 1st keypress
 
 for vanilla javascript:
 this resource on game controllers has been helpful: https://www.w3schools.com/graphics/game_controllers.asp
+
+might use the location object, as learned from w3 school: https://www.w3schools.com/jsref/obj_location.asp
 */

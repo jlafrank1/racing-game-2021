@@ -11,11 +11,11 @@ body {
 #blue-square {
   background-color: cornflowerblue;
   top: 50px;
-  left: 10px;
+  /* left: 10px; */
 }
 
 #red-square {
   background-color: lightcoral;
   top: 250px;
-  left: 10px;
+  /* left: 10px; */
 }
