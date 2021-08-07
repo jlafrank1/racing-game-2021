@@ -6,14 +6,19 @@ const blueSquare = document.getElementById('blue-square');
 const redSquare = document.getElementById('red-square');
 // console.log(redSquare)
 
-
+let position = 0
 
 // create event listener for blue square
 document.addEventListener('keydown', (e) => {
   if (e.code === "ArrowRight") {
     console.log("blue move")
     // on arrow right, move right +50px
-    blueSquare.style.left += "50px"
+    position += 50
+    let newPosition = position + 'px'
+    console.log(newPosition)
+
+    // blueSquare.style.left += "50px"
+    $('#blue-square').css('left', newPosition)
   }
 });
 
@@ -45,4 +50,6 @@ for vanilla javascript:
 this resource on game controllers has been helpful: https://www.w3schools.com/graphics/game_controllers.asp
 
 might use the location object, as learned from w3 school: https://www.w3schools.com/jsref/obj_location.asp
+
+this article cleared some stuff up for me, namely why i need to create a variable for position: https://stackoverflow.com/questions/52293082/keep-moving-an-element-when-one-key-is-pressed-jquery
 */
