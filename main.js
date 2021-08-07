@@ -6,19 +6,28 @@ const blueSquare = document.getElementById('blue-square');
 const redSquare = document.getElementById('red-square');
 // console.log(redSquare)
 
-let position = 0
+
+// had to set this variable because whenever i tried to move the player to the right without a variale, it would only move once, to +50px. i needed something i could increment.
+// let position = 0
+// need to create two separate starting position variables, one for each player
+let positionBlue = 0;
+let positionRed = 0;
+
 
 // create event listener for blue square
 document.addEventListener('keydown', (e) => {
   if (e.code === "ArrowRight") {
     console.log("blue move")
     // on arrow right, move right +50px
-    position += 50
-    let newPosition = position + 'px'
+    positionBlue += 50
+    let newPosition = positionBlue + 'px'
     console.log(newPosition)
 
-    // blueSquare.style.left += "50px"
+    //i'm sorry but i'm mixing jquery with javascript right now. i'll try to figure out how to make this a vanilla command later.
     $('#blue-square').css('left', newPosition)
+    //my first attempt at vanilla js to move the block 50px (it worked, but only on the first keydown.)
+    // blueSquare.style.left += "50px"
+
   }
 });
 
@@ -28,6 +37,10 @@ document.addEventListener('keydown', (e) => {
     console.log("red move")
     // on arrow up, move right +30px
     redSquare.style.left += "30px"
+    positionRed += 30
+    let newPosition = positionRed + 'px'
+    console.log(newPosition)
+    $('#red-square').css('left', newPosition)
   }
 });
 
