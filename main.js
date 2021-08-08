@@ -16,7 +16,7 @@ let positionRed = 0;
 
 // create event listener for blue square
 document.addEventListener('keydown', (e) => {
-  if (e.code === "ArrowRight") {
+  if (e.code === "ArrowUp") {
     console.log("blue move")
     // on arrow right, move right +50px
     positionBlue += 50
@@ -33,7 +33,7 @@ document.addEventListener('keydown', (e) => {
 
 // create event listener for red square
 document.addEventListener('keydown', (e) => {
-  if (e.code === "ArrowUp") {
+  if (e.code === "ArrowRight") {
     console.log("red move")
     // on arrow up, move right +30px
     redSquare.style.left += "30px"
