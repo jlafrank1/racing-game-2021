@@ -56,8 +56,15 @@ const raceButton = document.getElementById('race');
 const startGame = () => {
   // console.log("Clicked button!") // check your work
 
-
 // build a function to see if the player has won the race. checkIfComplete. if isComplete is == false, then isComplete = true. else place = 2nd.
+  let checkIfComplete = () => {
+    if (isComplete == false) {
+      isComplete = true;
+    } else {
+      place = 'second';
+    }
+  };
+
 
 // select width of racer
 const bluePlayerWidth = blueSquare.offsetWidth;
@@ -69,7 +76,8 @@ const raceTrackWidth = document.querySelector('body').offsetWidth - bluePlayerWi
 // console.log(raceTrackWidth);   // check your work
 
 // for the computer racer, generate a random number between 1 and 5000 (for example) to decide how long cars can race for, using Math.floor( (Math.random() * 5000) + 1)
-let raceTime1 = Math.floor((Math.random() * 3000) + 1);
+let raceTime1 = Math.floor((Math.random() * 5000) + 1);
+let raceTime2 = 0;
 
 // set a flag/finish line variable to false by default. use this to check if the player has finished the race.
 let isComplete = false;
@@ -81,9 +89,11 @@ let place = 'first';
 $('#blue-square').animate({
   left: raceTrackWidth
 }, raceTime1, function() {
-  //callback for once animation is complete
-  
+  // callback for once animation is complete
+  checkIfComplete();
 
+  // report on results
+  $('#race-results').text(`Blue player finished in ${place} place and clocked in at ${raceTime1} milliseconds!`);
 });
 
 // figure out how to duplicate this work for the 2nd player, but let it intake keypress instead of Math.random() to get to the finish line.
