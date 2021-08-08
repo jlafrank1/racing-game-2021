@@ -1,11 +1,16 @@
 body {
   background: papayawhip;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  /* align-items: stretch; */
+  /* align-content: space-around; */
 }
 
 .players {
   height: 100px;
   width: 100px;
-  position: absolute;
+  position: relative;
 }
 
 #blue-square {
@@ -16,6 +21,29 @@ body {
 
 #red-square {
   background-color: lightcoral;
-  top: 250px;
+  top: 100px;
   /* left: 10px; */
+}
+
+button {
+  background-color: aquamarine;
+  padding: 5px 20px 5px 20px;
+  border-radius: 4px;
+  border: 0;
+}
+
+button:hover {
+  background-color: cadetblue;
+}
+
+.race-course {
+  background-color: lightgrey;
+  width: 100%;
+  height: 400px;
+}
+
+.race-info {
+  background-color: #fff;
+  height: 200px;
+  width: 400px;
 }

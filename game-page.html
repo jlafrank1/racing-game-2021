@@ -14,13 +14,22 @@
 </head>
 <body>
 <!-- Buttons for Race and Reset -->
-<button id="race">Race</button>
-<button id="reset">Resset</button>
+<div class="game-buttons">
+  <button id="race">Race</button>
+  <button id="reset">Reset</button>
+</div>
 
 <!-- Div player for players -->
-<div class="players" id="blue-square"></div>
-<div class="players" id="red-square"></div>
+<div class="race-course">
+  <div class="players" id="blue-square"></div>
+  <div class="players" id="red-square"></div>
+</div>
 
+<!-- Div layer for race info -->
+<div class="race-info">
+  <h4>Race results</h4>
+  <p id="race-results"></p>
+</div>
 
 </body>
 </html>
