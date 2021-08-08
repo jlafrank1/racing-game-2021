@@ -86,15 +86,18 @@ let isComplete = false;
 let place = 'first';
 
 // build an animation. move the car the width of the racetrack. left: raceTrackWidth. include the time it takes the animation to run for, using the race time variable. include a call back for once the animation is complete. run the function checkIfComplete, and give info about if the race is complete.
+// TOFIX: THIS IS IN JQUERY INSTEAD OF JAVASCRIPT
 $('#blue-square').animate({
   left: raceTrackWidth
 }, raceTime1, function() {
   // callback for once animation is complete
   checkIfComplete();
-
   // report on results
   $('#race-results').text(`Blue player finished in ${place} place and clocked in at ${raceTime1} milliseconds!`);
 });
+
+  $('#red-square').function(checkIfComplete())
+  $('#race-results').text(`Red player finished in ${place} place and clocked in at ${raceTime2} milliseconds!`);
 
 // figure out how to duplicate this work for the 2nd player, but let it intake keypress instead of Math.random() to get to the finish line.
 };
@@ -107,7 +110,12 @@ $('#blue-square').animate({
 // clear the raceInfo span with an empty string
 
 
+const resetButton = document.getElementById('reset')
 
+const clearAll = () => {
+  $('.players').css('left', 0);
+  $('#race-results').text('');
+};
 
 
 
@@ -115,6 +123,8 @@ $('#blue-square').animate({
 
 // event listener to listen for click of race button. kicks off function startGame, above.
 raceButton.addEventListener('click', startGame)
+
+resetButton.addEventListener('click', clearAll)
 
 /*
 -------- RESOURCES ---------------------------
