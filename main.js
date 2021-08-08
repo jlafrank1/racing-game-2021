@@ -40,7 +40,8 @@ document.addEventListener('keydown', (e) => {
     let newPosition = positionRed + 'px'
     console.log(newPosition)
     // TOFIX: try to make this vanilla JS instead of jQuery
-    $('#red-square').css('left', newPosition)
+    // $('#red-square').css('left', newPosition)
+    redSquare.style.left = newPosition
   }
 });
 
@@ -70,13 +71,12 @@ const bluePlayerWidth = blueSquare.offsetWidth;
   // console.log(playerWidth) // check your work
 
 // get the width of the race track. since positions move at the top left corner, the player would disappear on screen, unless you subtract the width of the player from the width of the window
-
 const raceTrackWidth = document.querySelector('body').offsetWidth - bluePlayerWidth;
 // console.log(raceTrackWidth);   // check your work
 
 // for the computer racer, generate a random number between 1 and 5000 (for example) to decide how long cars can race for, using Math.floor( (Math.random() * 5000) + 1)
-let raceTime1 = Math.floor((Math.random() * 10000) + 3);
-let raceTime2 = 0;
+let blueRaceTime = Math.floor((Math.random() * 10000) + 1);
+let redRaceTime = 0;
 
 // set a flag/finish line variable to false by default. use this to check if the player has finished the race.
 let isComplete = false;
@@ -88,15 +88,15 @@ let place = 'first';
 // TOFIX: THIS IS IN JQUERY INSTEAD OF JAVASCRIPT
 $('#blue-square').animate({
   left: raceTrackWidth
-}, raceTime1, function() {
+}, blueRaceTime, function() {
   // callback for once animation is complete
   checkIfComplete();
   // report on results
-  $('#race-results').text(`Blue player finished in ${place} place and clocked in at ${raceTime1} milliseconds!`);
+  $('#race-results').text(`Blue player finished in ${place} place and clocked in at ${blueRaceTime} milliseconds!`);
 });
 
   $('#red-square').function(checkIfComplete())
-  $('#race-results').text(`Red player finished in ${place} place and clocked in at ${raceTime2} milliseconds!`);
+  $('#race-results').text(`Red player finished in ${place} place and clocked in at ${redRaceTime} milliseconds!`);
 
 // figure out how to duplicate this work for the 2nd player, but let it intake keypress instead of Math.random() to get to the finish line.
 };
