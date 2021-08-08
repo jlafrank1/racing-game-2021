@@ -24,10 +24,9 @@ document.addEventListener('keydown', (e) => {
     console.log(newPosition)
 
     //i'm sorry but i'm mixing jquery with javascript right now. i'll try to figure out how to make this a vanilla command later.
-    $('#blue-square').css('left', newPosition)
-    //my first attempt at vanilla js to move the block 50px (it worked, but only on the first keydown.)
-    // blueSquare.style.left += "50px"
-
+    // $('#blue-square').css('left', newPosition)
+    blueSquare.style.left = newPosition   // nailed it
+    // blueSquare.style.left += "50px"   // my first attempt at vanilla js to move the block 50px (it worked, but only on the first keydown.)
   }
 });
 
@@ -76,7 +75,7 @@ const raceTrackWidth = document.querySelector('body').offsetWidth - bluePlayerWi
 // console.log(raceTrackWidth);   // check your work
 
 // for the computer racer, generate a random number between 1 and 5000 (for example) to decide how long cars can race for, using Math.floor( (Math.random() * 5000) + 1)
-let raceTime1 = Math.floor((Math.random() * 5000) + 1);
+let raceTime1 = Math.floor((Math.random() * 10000) + 3);
 let raceTime2 = 0;
 
 // set a flag/finish line variable to false by default. use this to check if the player has finished the race.
@@ -116,7 +115,6 @@ const clearAll = () => {
   $('.players').css('left', 0);
   $('#race-results').text('');
 };
-
 
 
 
