@@ -40,9 +40,37 @@ document.addEventListener('keydown', (e) => {
     positionRed += 30
     let newPosition = positionRed + 'px'
     console.log(newPosition)
+    // TOFIX: try to make this vanilla JS instead of jQuery
     $('#red-square').css('left', newPosition)
   }
 });
+
+
+
+// click the go button
+// build a function to see if the player has won the race. checkIfComplete. if isComplete is == false, then isComplete = true. else place = 2nd.
+// select width of racer
+// get the width of the race track
+// since positions move at the top left corner, the player would disappear on screen, unless you subtract the width of the player from the width of the window
+// for the computer racer, generate a random number between 1 and 5000 (for example) to decide how long cars can race for, using Math.floor( (Math.random() * 5000) + 1)
+// set a flag/finish line variable to false by default. use this to check if the player has finished the race.
+// set another flag variable by to first by default
+// build an animation. move the car the width of the racetrack. left: raceTrackWidth. include the time it takes the animation to run for, using the race time variable. include a call back for once the animation is complete. run the function checkIfComplete, and give info about if the race is complete.
+// figure out how to duplicate this work for the 2nd player, but let it intake keypress instead of Math.random() to get to the finish line.
+
+// reset button
+// onClick, reset the css left property to zero of the players
+// clear the raceInfo span with an empty string
+
+
+
+
+
+
+
+
+
+
 
 /*
 -------- RESOURCES ---------------------------
