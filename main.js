@@ -60,12 +60,14 @@ const startGame = () => {
 // build a function to see if the player has won the race. checkIfComplete. if isComplete is == false, then isComplete = true. else place = 2nd.
 
 // select width of racer
-const playerWidth = blueSquare.offsetWidth;
+const bluePlayerWidth = blueSquare.offsetWidth;
   // console.log(playerWidth) // check your work
 
 // get the width of the race track
-const raceTrackWidth = document.querySelector('body').offsetWidth;
-console.log(raceTrackWidth);   // check your work
+const raceTrackWidth = document.querySelector('body').offsetWidth - bluePlayerWidth;
+// console.log(raceTrackWidth);   // check your work
+
+
 
 // since positions move at the top left corner, the player would disappear on screen, unless you subtract the width of the player from the width of the window
 
