@@ -85,7 +85,7 @@ let isComplete = false;
 let place = 'first';
 
 // build an animation. move the car the width of the racetrack. left: raceTrackWidth. include the time it takes the animation to run for, using the race time variable. include a call back for once the animation is complete. run the function checkIfComplete, and give info about if the race is complete.
-// TOFIX: THIS IS IN JQUERY INSTEAD OF JAVASCRIPT
+// ----- TOFIX: THIS IS IN JQUERY INSTEAD OF JAVASCRIPT -----
 $('#blue-square').animate({
   left: raceTrackWidth
 }, blueRaceTime, function() {
@@ -112,8 +112,15 @@ $('#blue-square').animate({
 const resetButton = document.getElementById('reset')
 
 const clearAll = () => {
-  $('.players').css('left', 0);
-  $('#race-results').text('');
+  // TOFIX: update this to javascript instead of jquery
+  // $('.players').css('left', 0);     // jQuery version // turns out this didn't actually work to reset everything. takes the square back to zero, but if you race again it starts where you left off on the x-axis
+  blueSquare.style.left = 0
+  redSquare.style.left = 0
+
+
+  // $('#race-results').text('');    // jQuery version
+  let raceResultText = document.getElementById('race-results')
+  raceResultText.textContent = ''
 };
 
 
