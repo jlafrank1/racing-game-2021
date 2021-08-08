@@ -1,10 +1,17 @@
 body {
   background: papayawhip;
-  /* display: flex; */
-  /* flex-direction: column; */
+  display: flex;
+  flex-direction: column;
   /* justify-content: center; */
   /* align-items: stretch; */
   /* align-content: space-around; */
+  font-family: 'Lato', sans-serif;
+}
+
+h1 {
+  font-family: 'Palette Mosaic', cursive;
+  font-size: 3.5em;
+  margin: 0 auto;
 }
 
 .players {
@@ -25,6 +32,11 @@ body {
   /* left: 10px; */
 }
 
+.game-buttons {
+  margin: 0 auto;
+  padding: 50px;
+}
+
 button {
   background-color: aquamarine;
   padding: 5px 20px 5px 20px;
@@ -40,10 +52,13 @@ button:hover {
   background-color: lightgrey;
   width: 100%;
   height: 400px;
+  margin: 20px 0 20px 0;
 }
 
 .race-info {
   background-color: #fff;
   height: 200px;
   width: 400px;
+  margin: 0 auto;
+  /* padding: 20px; */
 }
