@@ -64,7 +64,10 @@ button:hover {
   box-sizing: border-box;
 }
 
-
+.finish-line {
+  display: flex;
+  justify-content: center;
+}
 
 .race-info {
   background-color: #fff;
