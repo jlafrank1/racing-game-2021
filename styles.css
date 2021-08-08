@@ -65,7 +65,7 @@ button:hover {
 .race-info {
   background-color: #fff;
   height: 200px;
-  width: 400px;
-  margin: 0 auto;
+  width: 50%;
+  margin: 40px auto 0;
   /* padding: 20px; */
 }
