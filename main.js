@@ -47,15 +47,15 @@ document.addEventListener('keydown', (e) => {
 
 
 
-// click the go button
 
+// get raceButton info (add even listener at bottom of code)
 const raceButton = document.getElementById('race');
 
-raceButton.addEventListener('click', function(e) {
-  console.log("clicked!");
-})
 
-
+// function to start game
+const startGame = () => {
+  console.log("Clicked button!")
+};
 
 
 // build a function to see if the player has won the race. checkIfComplete. if isComplete is == false, then isComplete = true. else place = 2nd.
@@ -88,8 +88,8 @@ raceButton.addEventListener('click', function(e) {
 
 
 
-
-
+// event listener to listen for click of race button. kicks off function startGame, above.
+raceButton.addEventListener('click', startGame)
 
 /*
 -------- RESOURCES ---------------------------
