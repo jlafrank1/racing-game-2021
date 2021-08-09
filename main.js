@@ -129,17 +129,19 @@ $('#blue-square').animate({
 // else redWins
 // run this in a loop to constantly monitor if there is a winner? if neither are touching, keep running the loop.
 
-let div1 = document.getElementById('div1').getBoundingClientRect();
-let div1Top = div1.top;
-let div1Left = div1.left;
-let div1Right = div1.right
-let div1Bottom = div1.bottom
+const finishLine = document.getElementById('finish-line');
 
-let div2 = document.getElementById('div2').getBoundingClientRect();
-let div2Top = div1.top;
-let div2Left = div1.left;
-let div2Right = div1.right
-let div2Bottom = div1.bottom
+let humanPlayer = document.blueSquare.getBoundingClientRect();
+let humanTop = humanPlayer.top;
+let humanLeft = humanPlayer.left;
+let humanRight = humanPlayer.right
+let humanBottom = humanPlayer.bottom
+
+let finishLine = finishLine.getBoundingClientRect();
+let finishLineTop = finishLine.top;
+let finishLineLeft = finishLine.left;
+let finishLineRight = finishLine.right
+let finishLineBottom = finishLine.bottom
 
 if ((div2Top > div1Top && div2Top < div1Bottom)||(div2Bottom > div1Top && div2Bottom < div1Bottom)) {
   let verticalMatch = true

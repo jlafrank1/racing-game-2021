@@ -20,6 +20,8 @@ h1 {
   height: 100px;
   width: 100px;
   position: relative;
+  /* display: flex;
+  justify-content: flex-start; */
 }
 
 #blue-square {
@@ -56,6 +58,14 @@ button:hover {
   background-color: cadetblue;
 }
 
+.race-element {
+  background-color: #A59ECE;
+  display: flex;
+  flex-flow: nowrap;
+  flex-direction: row
+  align-items: stretch;
+}
+
 .race-course {
   background-color: lightgrey;
   width: 100%;
@@ -64,6 +74,8 @@ button:hover {
   border-right: dashed 10px goldenrod;
   box-sizing: border-box;
   /* padding-right: 30px; */
+  /* display: flex;
+  justify-content: flex-start; */
 }
 
 @keyframes dancing-image {
@@ -78,14 +90,23 @@ button:hover {
   }
 }
 
-
-.finish-line {
+.finish-object {
   display: flex;
   justify-content: center;
+  align-items: stretch;
 }
 
 #randomimage {
   /* animation: dancing-image 1s infinite; */    /* this works, i just turned it off for now.  */
+}
+
+.finish-line {
+  width: 20px;
+  height: 400px;
+  background-color: #F5B43B;
+  display: flex;
+  justify-content: flex-end;
+
 }
 
 .race-info {
