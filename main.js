@@ -43,7 +43,6 @@ document.addEventListener('keydown', (e) => {
     positionRed += 30
     let newPosition = positionRed + 'px'
     console.log(newPosition)
-    // TOFIX: try to make this vanilla JS instead of jQuery
     // $('#red-square').css('left', newPosition)
     redSquare.style.left = newPosition
   }
@@ -52,7 +51,7 @@ document.addEventListener('keydown', (e) => {
 
 
 // ---------------- Event Listener for Race Button ------------------
-// get raceButton info (add even listener at bottom of code)
+// get raceButton info (add event listener at bottom of code)
 const raceButton = document.getElementById('race');
 
 
@@ -61,17 +60,17 @@ const raceButton = document.getElementById('race');
 const startGame = () => {
   // console.log("Clicked button!") // check your work
 
-
 // --- first draft at function checkIfComplete
-// build a function to see if the player has won the race. if isComplete is == false, then isComplete = true. else place = 2nd.
+// build a function to see if the player has won the race.
   let checkIfComplete = () => {
+    // if no car has completed the race
     if (isComplete == false) {
+      // then set isComplete variable to true. a car will reach the end, then this function is run, so it will change isComplete to true
       isComplete = true;
     } else {
       place = 'second';
     }
   };
-
 
 /*
 --- 2nd try at checkIfComplete
@@ -108,29 +107,20 @@ let place = 'first';
 // ------------- Animation for Computer Player -----------------------
 // build an animation. move the car the width of the racetrack. left: raceTrackWidth. include the time it takes the animation to run for, using the race time variable.
 // include a call back for once the animation is complete. run the function checkIfComplete, and give info about if the race is complete.
-// ----- TOFIX: THIS IS IN JQUERY INSTEAD OF JAVASCRIPT -----
+// ----- THIS IS IN JQUERY INSTEAD OF JAVASCRIPT -----
 $('#blue-square').animate({
+  // name the animation
   left: raceTrackWidth
+  // set the time of the animation
 }, blueRaceTime, function() {
-  // callback for once animation is complete
+  // callback to check if animation is complete
   checkIfComplete();
   // report on results
-  $('#race-results').text(`Blue player finished in ${place} place and clocked in at ${blueRaceTime} milliseconds!`);
+  $('#race-results1').text(`Blue player finished in ${place} place and clocked in at ${blueRaceTime} milliseconds!`);
 });
 
-// //2nd try
-// $('#blue-square').animate(
-//   {
-//   left: raceTrackWidth
-//   }, blueRaceTime
-// );
 
-// /* this determines the speed of the redSquare */
-  // $('#red-square').function(checkIfComplete())
-//   $('#race-results').text(`Red player finished in ${place} place and clocked in at ${redRaceTime} milliseconds!`);
-
-};
-
+// /* this determines the location of the redSquare */
 /* Logic for checking coordinates and how it relates to the race
 1. run animation of computer from L to R
 2. at end of animation, check position of the humanPlayer
@@ -138,6 +128,26 @@ $('#blue-square').animate({
   a. then blueSquare wins
 
 */
+
+
+
+
+
+
+
+
+};     // ends the startGame function
+
+
+// check position of human player
+// let humanPosition = $('red-square').offset();
+// console.log(humanPosition.left)
+
+
+let p = $("#red-square")
+let offset = p.offset();
+console.log( "left: " + offset.left + ", top: " + offset.top );
+
 
 // ------------ Someone else's code to Detect if Two Objects Touch ------------
 // Planning to modify this to represent 3 objects: blueSquare, redSquare, and finishLine
@@ -217,8 +227,10 @@ const clearAll = () => {
   positionRed = 0
 
   // $('#race-results').text('');    // jQuery version
-  let raceResultText = document.getElementById('race-results')
+  let raceResultText = document.getElementById('race-results1')
   raceResultText.textContent = ''
+  let raceResultText2 = document.getElementById('race-results2')
+  raceResultText2.textContent = ''
 };
 
 
