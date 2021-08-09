@@ -2,7 +2,7 @@ body {
   background: papayawhip;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
+  justify-content: center;
   /* align-items: stretch; */
   /* align-content: space-around; */
   font-family: 'Nunito', sans-serif;
@@ -59,7 +59,7 @@ button:hover {
 .race-course {
   background-color: lightgrey;
   width: 100%;
-  height: 400px;
+  height: 350px;
   margin: 20px 0 20px 0;
   border-right: dashed 10px goldenrod;
   box-sizing: border-box;
@@ -95,12 +95,13 @@ button:hover {
   display: flex;
   /* flex-flow: row nowrap; */
   /* flex-direction: column; */
-  /* flex-wrap: nowrap; */
+  flex-wrap: wrap;
   justify-content: center;
   /* align-items: stretch; */
   /* align-content: space-around; */
   /* flex-grow: 1; */
   /* padding: 20px; */
+  margin: 0 auto;    /* ok this works to center the whole box. using flex only seems to center the text/containers inside of this box. OH THAT MAKES SENSE NOW THAT I'VE SAID THAT THANK YOU */
 }
 
 .race-results {
