@@ -55,12 +55,29 @@ document.addEventListener('keydown', (e) => {
 const raceButton = document.getElementById('race');
 
 
+
+
+
 // ----------- Function for Start Game ------------------------------
 // function to start game
 const startGame = () => {
   // console.log("Clicked button!") // check your work
 
-// -- Function to Compare Positions ---
+// // ------- first draft at function checkIfComplete ----
+// // build a function to see if the player has won the race.
+//   let checkIfComplete = () => {
+//     // if no car has completed the race
+//     if (isComplete == false) {
+//       // then set isComplete variable to true. a car will reach the end, then this function is run, so it will change isComplete to true
+//       isComplete = true;
+//     } else {
+//       place = 'second';
+//     }
+//   };
+//
+
+
+// ------- Function to Compare Positions -------
 const comparePositions = () => {
 
   let r = $("#red-square")
@@ -74,34 +91,13 @@ const comparePositions = () => {
 
   if (rOffset.left > bOffset.left) {
     console.log('Red wins!')
+    $('#race-results').text("Human wins!");
   } else {
     console.log('Blue wins!')
+    $('#race-results').text("Doggo wins!");
   }
 };
 
-
-
-
-// --- first draft at function checkIfComplete
-// build a function to see if the player has won the race.
-  let checkIfComplete = () => {
-    // if no car has completed the race
-    if (isComplete == false) {
-      // then set isComplete variable to true. a car will reach the end, then this function is run, so it will change isComplete to true
-      isComplete = true;
-    } else {
-      place = 'second';
-    }
-  };
-
-/*
---- 2nd try at checkIfComplete
-if blue is at end and red is at less than end, place = 1st
-else, second
-
-TOFIX
-
-*/
 
 // ---------- Calculate Player Width ------------------------------
 // select width of racer
@@ -117,19 +113,10 @@ const raceTrackWidth = document.querySelector('body').offsetWidth - bluePlayerWi
 let blueRaceTime = Math.floor((Math.random() * 10000) + 1);
 // let redRaceTime = 0;
 
-// ------------ Variable for Finish Completion ---------------------
-// might take this out to try using raceTrackWidth to track the isComplete variable
-// set a flag/finish line variable to false by default. use this to check if the player has finished the race.
-let isComplete = false;
-
-// ------ Variable for First or Second Place -----------------------
-// set another flag variable by to first by default
-let place = 'first';
 
 // ------------- Animation for Computer Player -----------------------
 // build an animation. move the car the width of the racetrack. left: raceTrackWidth. include the time it takes the animation to run for, using the race time variable.
 // include a call back for once the animation is complete. run the function checkIfComplete, and give info about if the race is complete.
-// // ----- THIS IS IN JQUERY INSTEAD OF JAVASCRIPT -----
 // $('#blue-square').animate({
 //   // name the animation
 //   left: raceTrackWidth
@@ -141,19 +128,17 @@ let place = 'first';
 //   $('#race-results1').text(`Blue player finished in ${place} place and clocked in at ${blueRaceTime} milliseconds!`);
 // });
 
-
-// /* this determines the location of the redSquare */
-/* Logic for checking coordinates and how it relates to the race
-1. run animation of computer from L to R
+/*
+Logic for checking coordinates and how it relates to the race:
+1. run animation of computerplayer from L to R
 2. at end of animation, check position of the humanPlayer
 3. if blueSquare.offset.left > redSquare.offset.left,
   a. then blueSquare wins
-
 */
 
-// ---- 2nd draft of animate + callback Function
+// 2nd draft with new callback function
 $('#blue-square').animate({
-  // name the animation
+  // set the animation
   left: raceTrackWidth
   // set the time of the animation
 }, blueRaceTime, function() {
@@ -165,6 +150,52 @@ $('#blue-square').animate({
 
 
 };     // ends the startGame function
+
+
+
+// -------- Variable for Reset Button -------------------------
+// reset button
+// onClick, reset the css left property to zero of the players
+// clear the raceInfo span with an empty string
+const resetButton = document.getElementById('reset')
+
+
+// --------- Function to Clear Player Coordinates/Reset -----------
+const clearAll = () => {
+  // $('.players').css('left', 0);     // jQuery version
+  // turns out this didn't actually work to reset everything. takes the square back to zero, but if you race again it starts where you left off on the x-axis.
+  // update: figured out that i also needed to reset the value of positionRed
+  blueSquare.style.left = 0
+  redSquare.style.left = 0
+  positionRed = 0
+
+  // $('#race-results').text('');    // jQuery version
+  let raceResultText = document.getElementById('race-results')
+  raceResultText.textContent = ''
+
+};
+
+
+// --------- Event Listeners for Race and Reset Buttons --------------
+// event listener to listen for click of race button. kicks off function startGame, above.
+raceButton.addEventListener('click', startGame)
+resetButton.addEventListener('click', clearAll)
+
+
+// ----------------CODE I DIDN'T END UP USING: -----------------------
+
+
+
+// ---- no longer relevant given new approach to determining winner of game----
+// // ------------ Variable for Finish Completion ---------------------
+// // might take this out to try using raceTrackWidth to track the isComplete variable
+// // set a flag/finish line variable to false by default. use this to check if the player has finished the race.
+// let isComplete = false;
+// // ------ Variable for First or Second Place -----------------------
+// // set another flag variable by to first by default
+// let place = 'first';
+
+
 
 
 
@@ -222,43 +253,8 @@ if (horMatch && vertMatch) {
   console.log("no intersect")
 }
 
-
 };
 */
-
-
-
-
-// -------- Variable for Reset Button -------------------------
-// reset button
-// onClick, reset the css left property to zero of the players
-// clear the raceInfo span with an empty string
-const resetButton = document.getElementById('reset')
-
-
-// --------- Function to Clear Player Coordinates/Reset -----------
-const clearAll = () => {
-  // $('.players').css('left', 0);     // jQuery version
-  // turns out this didn't actually work to reset everything. takes the square back to zero, but if you race again it starts where you left off on the x-axis.
-  // update: figured out that i also needed to reset the value of positionRed
-  blueSquare.style.left = 0
-  redSquare.style.left = 0
-  positionRed = 0
-
-  // $('#race-results').text('');    // jQuery version
-  let raceResultText = document.getElementById('race-results1')
-  raceResultText.textContent = ''
-  let raceResultText2 = document.getElementById('race-results2')
-  raceResultText2.textContent = ''
-};
-
-
-// --------- Event Listeners for Race and Reset Buttons --------------
-// event listener to listen for click of race button. kicks off function startGame, above.
-raceButton.addEventListener('click', startGame)
-resetButton.addEventListener('click', clearAll)
-
-
 
 
 
