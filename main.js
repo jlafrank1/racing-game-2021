@@ -144,10 +144,14 @@ $('#blue-square').animate({
 // console.log(humanPosition.left)
 
 
-let p = $("#red-square")
-let offset = p.offset();
-console.log( "left: " + offset.left + ", top: " + offset.top );
+let r = $("#red-square")
+let rOffset = r.offset();
+console.log( "left: " + rOffset.left + ", top: " + rOffset.top );
 
+
+let b = $('#blue-square')
+let bOffset = b.offset();
+console.log( "left: " + bOffset.left + ", top: " + bOffset.top )
 
 // ------------ Someone else's code to Detect if Two Objects Touch ------------
 // Planning to modify this to represent 3 objects: blueSquare, redSquare, and finishLine
