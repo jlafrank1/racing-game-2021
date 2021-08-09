@@ -107,15 +107,22 @@ let place = 'first';
 
 // ------------- Animation for Computer Player -----------------------
 // build an animation. move the car the width of the racetrack. left: raceTrackWidth. include the time it takes the animation to run for, using the race time variable. include a call back for once the animation is complete. run the function checkIfComplete, and give info about if the race is complete.
-// ----- TOFIX: THIS IS IN JQUERY INSTEAD OF JAVASCRIPT -----
-$('#blue-square').animate({
+// // ----- TOFIX: THIS IS IN JQUERY INSTEAD OF JAVASCRIPT -----
+// $('#blue-square').animate({
+//   left: raceTrackWidth
+// }, blueRaceTime, function() {
+//   // callback for once animation is complete
+//   checkIfComplete();
+//   // report on results
+//   $('#race-results').text(`Blue player finished in ${place} place and clocked in at ${blueRaceTime} milliseconds!`);
+// });
+
+//2nd try
+$('#blue-square').animate(
+  {
   left: raceTrackWidth
-}, blueRaceTime, function() {
-  // callback for once animation is complete
-  checkIfComplete();
-  // report on results
-  $('#race-results').text(`Blue player finished in ${place} place and clocked in at ${blueRaceTime} milliseconds!`);
-});
+  }, blueRaceTime
+);
 
 // /* leaving out for now */
 //   $('#red-square').function(checkIfComplete())
@@ -127,10 +134,19 @@ $('#blue-square').animate({
 // Planning to modify this to represent 3 objects: blueSquare, redSquare, and finishLine
 // if blueSquare touches finishe line and redSquare does not, blue Wins
 // else redWins
-// run this in a loop to constantly monitor if there is a winner? if neither are touching, keep running the loop.
+// run this in a loop to constantly monitor if there is a winner? if neither are touching, keep running the loop. run this loop if #race-results = '' ???
+/*
+if (document.getElementById('race-results') == '') {
+  console.log("empty race results string")
+}
+*/
 
-let horizontalMatch = ""
-let verticalMatch = ""
+/*
+const collisionDetection = () => {
+
+let horMatch = ""
+let vertMatch = ""
+let intersect = ""
 
 let humanPlayerRef = blueSquare.getBoundingClientRect();
 let humanTop = humanPlayerRef.top;
@@ -145,31 +161,40 @@ let finishLineRight = finishLineRef.right
 let finishLineBottom = finishLineRef.bottom
 
 if ((finishLineTop > humanTop && finishLineTop < humanBottom)||(finishLineBottom > humanTop && finishLineBottom < humanBottom)) {
-  /*let*/ verticalMatch = true
+  vertMatch = true
+    console.log("vertical match")
 } else{
-  /*let*/ verticalMatch = false
+  vertMatch = false
+    console.log("no vertical match")
 }
 
 if ((finishLineRight > humanLeft && finishLineRight < humanRight)||(finishLineLeft < humanRight && finishLineLeft > humanLeft)) {
-  /*let*/ horizontalMatch = true
+  horMatch = true
+  console.log("horizontal match")
 } else {
-  /*let*/ horizontalMatch = false
+  horMatch = false
+    console.log("no horizontal match")
 }
 
-if (horizontalMatch && verticalMatch) {
+if (horMatch && vertMatch) {
   let intersect = true
+    console.log("intersect")
 } else {
   let intersect = false
+  console.log("no intersect")
 }
-//-----------
+
+
+};
+*/
 
 
 
+
+// -------- Variable for Reset Button -------------------------
 // reset button
 // onClick, reset the css left property to zero of the players
 // clear the raceInfo span with an empty string
-
-// -------- Variable for Reset Button -------------------------
 const resetButton = document.getElementById('reset')
 
 
@@ -193,6 +218,14 @@ const clearAll = () => {
 raceButton.addEventListener('click', startGame)
 resetButton.addEventListener('click', clearAll)
 
+
+
+
+
+
+
+
+
 /*
 -------- RESOURCES ---------------------------
 started with inspiration from this video of building a jQuery race game: https://www.youtube.com/watch?v=QVSwX98kKFs
@@ -203,7 +236,6 @@ making modifications to have a diff user experience
 the .offset() setter method allows us to reposition an element, relative to the document
 
 how to detect object collision: https://stackoverflow.com/questions/50378855/how-to-detect-if-two-divs-are-touching-collision-detection
-
 
 this resource on vanilla javascript game controllers has been helpful: https://www.w3schools.com/graphics/game_controllers.asp
 
