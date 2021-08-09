@@ -124,38 +124,39 @@ $('#blue-square').animate({
 };
 
 // ------------ Someone else's code to Detect if Two Objects Touch ------------
-// May modify this to represent 3 objects: blueSquare, redSquare, and finishLine
+// Planning to modify this to represent 3 objects: blueSquare, redSquare, and finishLine
 // if blueSquare touches finishe line and redSquare does not, blue Wins
 // else redWins
 // run this in a loop to constantly monitor if there is a winner? if neither are touching, keep running the loop.
 
-const finishLine = document.getElementById('finish-line');
+let horizontalMatch = ""
+let verticalMatch = ""
 
-let humanPlayer = document.blueSquare.getBoundingClientRect();
-let humanTop = humanPlayer.top;
-let humanLeft = humanPlayer.left;
-let humanRight = humanPlayer.right
-let humanBottom = humanPlayer.bottom
+let humanPlayerRef = blueSquare.getBoundingClientRect();
+let humanTop = humanPlayerRef.top;
+let humanLeft = humanPlayerRef.left;
+let humanRight = humanPlayerRef.right
+let humanBottom = humanPlayerRef.bottom
 
-let finishLine = finishLine.getBoundingClientRect();
-let finishLineTop = finishLine.top;
-let finishLineLeft = finishLine.left;
-let finishLineRight = finishLine.right
-let finishLineBottom = finishLine.bottom
+let finishLineRef = document.getElementById('finish-line').getBoundingClientRect();
+let finishLineTop = finishLineRef.top;
+let finishLineLeft = finishLineRef.left;
+let finishLineRight = finishLineRef.right
+let finishLineBottom = finishLineRef.bottom
 
-if ((div2Top > div1Top && div2Top < div1Bottom)||(div2Bottom > div1Top && div2Bottom < div1Bottom)) {
-  let verticalMatch = true
+if ((finishLineTop > humanTop && finishLineTop < humanBottom)||(finishLineBottom > humanTop && finishLineBottom < humanBottom)) {
+  /*let*/ verticalMatch = true
 } else{
-  let verticalMatch = false
+  /*let*/ verticalMatch = false
 }
 
-if ((div2Right > div1Left && div2Right < div1Right)||(div2Left < div1Right && div2Left > div1Left)) {
-  let horizontalMatch = true
+if ((finishLineRight > humanLeft && finishLineRight < humanRight)||(finishLineLeft < humanRight && finishLineLeft > humanLeft)) {
+  /*let*/ horizontalMatch = true
 } else {
-  let horizontalMatch = false
+  /*let*/ horizontalMatch = false
 }
 
-if (horizontalMatch && vertialMatch){
+if (horizontalMatch && verticalMatch) {
   let intersect = true
 } else {
   let intersect = false
@@ -194,14 +195,14 @@ resetButton.addEventListener('click', clearAll)
 
 /*
 -------- RESOURCES ---------------------------
-
-
 started with inspiration from this video of building a jQuery race game: https://www.youtube.com/watch?v=QVSwX98kKFs
 making modifications to have a diff user experience
 
 .offset() is a jQuery method according to: https://api.jquery.com/offset/
 .offset() allows us to retrieve a current position, relative to the document
 the .offset() setter method allows us to reposition an element, relative to the document
+
+how to detect object collision: https://stackoverflow.com/questions/50378855/how-to-detect-if-two-divs-are-touching-collision-detection
 
 
 this resource on vanilla javascript game controllers has been helpful: https://www.w3schools.com/graphics/game_controllers.asp
