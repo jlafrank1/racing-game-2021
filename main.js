@@ -112,11 +112,10 @@ $('#blue-square').animate({
   $('#race-results').text(`Blue player finished in ${place} place and clocked in at ${blueRaceTime} milliseconds!`);
 });
 
-/* leaving out for now */
-  // $('#red-square').function(checkIfComplete())
-  // $('#race-results').text(`Red player finished in ${place} place and clocked in at ${redRaceTime} milliseconds!`);
+// /* leaving out for now */
+//   $('#red-square').function(checkIfComplete())
+//   $('#race-results').text(`Red player finished in ${place} place and clocked in at ${redRaceTime} milliseconds!`);
 
-// figure out how to duplicate this work for the 2nd player, but let it intake keypress instead of Math.random() to get to the finish line.
 };
 
 
