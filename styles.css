@@ -98,12 +98,12 @@ button:hover {
   flex-wrap: wrap;
   justify-content: center;
   /* align-items: stretch; */
-  /* align-content: space-around; */
+  align-content: flex-start;
   /* flex-grow: 1; */
   /* padding: 20px; */
   margin: 0 auto;    /* ok this works to center the whole box. using flex only seems to center the text/containers inside of this box. OH THAT MAKES SENSE NOW THAT I'VE SAID THAT THANK YOU */
 }
 
 .race-results {
-  min-height: 150px;
+
 }
