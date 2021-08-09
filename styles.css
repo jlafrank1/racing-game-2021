@@ -91,17 +91,31 @@ button:hover {
 }
 
 
-.title {
-  font-size: 1.5em;
-  font-weight: bold;
-  text-align: center;
-}
+
+
+
 
 /* section is race results and image */
 section {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+#directions {
+  text-align:center;
+}
+
+.title {
+  font-size: 20px;
+  color: goldenrod;
+  font-weight: 900;
+  display: inline-block;
+  text-align: center;
+}
+
+p {
+  /* color: #a59ece; */
 }
 
 /* Container of Race Info */
@@ -126,6 +140,7 @@ section {
   font-size: 2em;
   font-weight: bold;
   margin: -30px 0 0 0;
+  /* background-color: #a59ece; */
 }
 
 .finish-object {
