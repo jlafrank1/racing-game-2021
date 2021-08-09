@@ -77,6 +77,7 @@ const startGame = () => {
 //
 
 
+
 // ------- Function to Compare Positions -------
 const comparePositions = () => {
 

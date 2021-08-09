@@ -11,8 +11,8 @@ body {
 }
 
 h1 {
-  font-family: 'Palette Mosaic', cursive;
-  font-size: 3.5em;
+  font-family: 'Sigmar One', cursive;
+  font-size: 4em;
   margin: 0 auto 20px auto;
   text-shadow: grey 1px 0 10px;
 }
@@ -26,13 +26,13 @@ h1 {
 }
 
 #blue-square {
-  background-color: cornflowerblue;
+  /* background-color: #A59ECE; */
   top: 50px;
   /* left: 10px; */
 }
 
 #red-square {
-  background-color: lightcoral;
+  /* background-color: lightcoral; */
   top: 100px;
   /* left: 10px; */
 }
