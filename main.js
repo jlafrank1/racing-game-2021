@@ -63,7 +63,7 @@ const startGame = () => {
 
 
 // --- first draft at function checkIfComplete
-// build a function to see if the player has won the race. checkIfComplete. if isComplete is == false, then isComplete = true. else place = 2nd.
+// build a function to see if the player has won the race. if isComplete is == false, then isComplete = true. else place = 2nd.
   let checkIfComplete = () => {
     if (isComplete == false) {
       isComplete = true;
@@ -106,29 +106,38 @@ let isComplete = false;
 let place = 'first';
 
 // ------------- Animation for Computer Player -----------------------
-// build an animation. move the car the width of the racetrack. left: raceTrackWidth. include the time it takes the animation to run for, using the race time variable. include a call back for once the animation is complete. run the function checkIfComplete, and give info about if the race is complete.
-// // ----- TOFIX: THIS IS IN JQUERY INSTEAD OF JAVASCRIPT -----
-// $('#blue-square').animate({
-//   left: raceTrackWidth
-// }, blueRaceTime, function() {
-//   // callback for once animation is complete
-//   checkIfComplete();
-//   // report on results
-//   $('#race-results').text(`Blue player finished in ${place} place and clocked in at ${blueRaceTime} milliseconds!`);
-// });
-
-//2nd try
-$('#blue-square').animate(
-  {
+// build an animation. move the car the width of the racetrack. left: raceTrackWidth. include the time it takes the animation to run for, using the race time variable.
+// include a call back for once the animation is complete. run the function checkIfComplete, and give info about if the race is complete.
+// ----- TOFIX: THIS IS IN JQUERY INSTEAD OF JAVASCRIPT -----
+$('#blue-square').animate({
   left: raceTrackWidth
-  }, blueRaceTime
-);
+}, blueRaceTime, function() {
+  // callback for once animation is complete
+  checkIfComplete();
+  // report on results
+  $('#race-results').text(`Blue player finished in ${place} place and clocked in at ${blueRaceTime} milliseconds!`);
+});
 
-// /* leaving out for now */
-//   $('#red-square').function(checkIfComplete())
+// //2nd try
+// $('#blue-square').animate(
+//   {
+//   left: raceTrackWidth
+//   }, blueRaceTime
+// );
+
+// /* this determines the speed of the redSquare */
+  // $('#red-square').function(checkIfComplete())
 //   $('#race-results').text(`Red player finished in ${place} place and clocked in at ${redRaceTime} milliseconds!`);
 
 };
+
+/* Logic for checking coordinates and how it relates to the race
+1. run animation of computer from L to R
+2. at end of animation, check position of the humanPlayer
+3. if blueSquare.offset.left > redSquare.offset.left,
+  a. then blueSquare wins
+
+*/
 
 // ------------ Someone else's code to Detect if Two Objects Touch ------------
 // Planning to modify this to represent 3 objects: blueSquare, redSquare, and finishLine
