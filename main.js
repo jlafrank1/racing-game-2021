@@ -94,7 +94,6 @@ let blueRaceTime = Math.floor((Math.random() * 10000) + 1);
 
 
 // might take this out to try using raceTrackWidth to track the isComplete variable
-
 // set a flag/finish line variable to false by default. use this to check if the player has finished the race.
 let isComplete = false;
 
