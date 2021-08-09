@@ -1,11 +1,13 @@
 body {
   background: papayawhip;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   /* align-items: stretch; */
   /* align-content: space-around; */
   font-family: 'Nunito', sans-serif;
+  padding: 20px 0 20px 0;
 }
 
 h1 {
@@ -94,10 +96,11 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: stretch;
+  margin: 25px;
 }
 
 #randomimage {
-  /* animation: dancing-image 1s infinite; */    /* this works, i just turned it off for now.  */
+  animation: dancing-image 2s 3;    /* this works, i just turned it off for now.  */
 }
 
 .finish-line {
@@ -115,16 +118,17 @@ button:hover {
   width: 50%;
   display: flex;
   /* flex-flow: row nowrap; */
-  /* flex-direction: column; */
-  flex-wrap: wrap;
-  justify-content: center;
-  /* align-items: stretch; */
-  align-content: flex-start;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  /* justify-content: center; */
+  align-items: center;
+  /* align-content: center; */
   /* flex-grow: 1; */
   /* padding: 20px; */
-  margin: 0 auto;    /* ok this works to center the whole box. using flex only seems to center the text/containers inside of this box. OH THAT MAKES SENSE NOW THAT I'VE SAID THAT THANK YOU */
+  margin: 25px auto;
 }
 
-.race-results {
-
+#race-results {
+  font-size: 2em;
+  font-weight: bold;
 }
