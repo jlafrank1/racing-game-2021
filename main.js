@@ -1,12 +1,13 @@
 console.log("Go speed racer, go!")
 
+// -------------- Player Variables ------------------------
 // establish variables for blue square and red square, for easy reference
 const blueSquare = document.getElementById('blue-square');
 // console.log(blueSquare)
 const redSquare = document.getElementById('red-square');
 // console.log(redSquare)
 
-
+// ------------- Starting Position Variables -----------------
 // had to set this variable because whenever i tried to move the player to the right without a variale, it would only move once, to +50px. i needed something i could increment.
 // let position = 0
 // need to create two separate starting position variables, one for each player
@@ -32,6 +33,7 @@ document.addEventListener('keydown', (e) => {
 });
 */
 
+// --------------- Event Listener for Human Player ---------------
 // create event listener for red square
 document.addEventListener('keydown', (e) => {
   if (e.code === "ArrowRight") {
@@ -49,11 +51,12 @@ document.addEventListener('keydown', (e) => {
 
 
 
-
+// ---------------- Event Listener for Race Button ------------------
 // get raceButton info (add even listener at bottom of code)
 const raceButton = document.getElementById('race');
 
 
+// ----------- Functino for Start Game ------------------------------
 // function to start game
 const startGame = () => {
   // console.log("Clicked button!") // check your work
@@ -79,7 +82,7 @@ TOFIX
 
 */
 
-
+// ---------- Calculate Player Width ------------------------------
 // select width of racer
 const bluePlayerWidth = blueSquare.offsetWidth;
   // console.log(playerWidth) // check your work
@@ -88,19 +91,21 @@ const bluePlayerWidth = blueSquare.offsetWidth;
 const raceTrackWidth = document.querySelector('body').offsetWidth - bluePlayerWidth;
 // console.log(raceTrackWidth);   // check your work
 
+// --------- Randomize Computer Player Time --------------------
 // for the computer racer, generate a random number between 1 and 5000 (for example) to decide how long cars can race for, using Math.floor( (Math.random() * 5000) + 1)
 let blueRaceTime = Math.floor((Math.random() * 10000) + 1);
 // let redRaceTime = 0;
 
-
+// ------------ Variable for Finish Completion ---------------------
 // might take this out to try using raceTrackWidth to track the isComplete variable
 // set a flag/finish line variable to false by default. use this to check if the player has finished the race.
 let isComplete = false;
 
-
+// ------ Variable for First or Second Place -----------------------
 // set another flag variable by to first by default
 let place = 'first';
 
+// ------------- Animation for Computer Player -----------------------
 // build an animation. move the car the width of the racetrack. left: raceTrackWidth. include the time it takes the animation to run for, using the race time variable. include a call back for once the animation is complete. run the function checkIfComplete, and give info about if the race is complete.
 // ----- TOFIX: THIS IS IN JQUERY INSTEAD OF JAVASCRIPT -----
 $('#blue-square').animate({
@@ -118,6 +123,42 @@ $('#blue-square').animate({
 
 };
 
+// ------------ Someone else's code to Detect if Two Objects Touch ------------
+// May modify this to represent 3 objects: blueSquare, redSquare, and finishLine
+// if blueSquare touches finishe line and redSquare does not, blue Wins
+// else redWins
+// run this in a loop to constantly monitor if there is a winner? if neither are touching, keep running the loop.
+
+let div1 = document.getElementById('div1').getBoundingClientRect();
+let div1Top = div1.top;
+let div1Left = div1.left;
+let div1Right = div1.right
+let div1Bottom = div1.bottom
+
+let div2 = document.getElementById('div2').getBoundingClientRect();
+let div2Top = div1.top;
+let div2Left = div1.left;
+let div2Right = div1.right
+let div2Bottom = div1.bottom
+
+if ((div2Top > div1Top && div2Top < div1Bottom)||(div2Bottom > div1Top && div2Bottom < div1Bottom)) {
+  let verticalMatch = true
+} else{
+  let verticalMatch = false
+}
+
+if ((div2Right > div1Left && div2Right < div1Right)||(div2Left < div1Right && div2Left > div1Left)) {
+  let horizontalMatch = true
+} else {
+  let horizontalMatch = false
+}
+
+if (horizontalMatch && vertialMatch){
+  let intersect = true
+} else {
+  let intersect = false
+}
+//-----------
 
 
 
@@ -125,9 +166,11 @@ $('#blue-square').animate({
 // onClick, reset the css left property to zero of the players
 // clear the raceInfo span with an empty string
 
-
+// -------- Variable for Reset Button -------------------------
 const resetButton = document.getElementById('reset')
 
+
+// --------- Function to Clear Player Coordinates/Reset -----------
 const clearAll = () => {
   // $('.players').css('left', 0);     // jQuery version
   // turns out this didn't actually work to reset everything. takes the square back to zero, but if you race again it starts where you left off on the x-axis.
@@ -136,17 +179,15 @@ const clearAll = () => {
   redSquare.style.left = 0
   positionRed = 0
 
-
   // $('#race-results').text('');    // jQuery version
   let raceResultText = document.getElementById('race-results')
   raceResultText.textContent = ''
 };
 
 
-
+// --------- Event Listeners for Race and Reset Buttons --------------
 // event listener to listen for click of race button. kicks off function startGame, above.
 raceButton.addEventListener('click', startGame)
-
 resetButton.addEventListener('click', clearAll)
 
 /*
