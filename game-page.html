@@ -24,18 +24,31 @@
 </head>
 
 <body>
-<!-- Page title -->
-  <h1>Don't Eat That!</h1>
+  <header>
+    <button class="game buttons" id="race">Race</button>
+    <!-- Page title -->
+    <h1>Don't Eat That!</h1>
+    <button class="game buttons" id="reset">Reset</button>
+  </header>
 
-<!-- Buttons for Race and Reset -->
-<div class="game-buttons">
-  <button id="race">Race</button>
-  <button id="reset">Reset</button>
-</div>
 
-<!-- finish line image -->
-<!-- Would like to randomly generate an image to put here on each round, if time -->
-<div class="finish-object"><img id="randomimage" src="assets/slippers.jpeg" height="100px"></div>
+<!-- section for race results and random image -->
+<section>
+  <!-- Div layer for race info -->
+  <div class="race-info">
+    <!-- <h3>To play</h3> -->
+    <p id="directions">
+      <span class="title">Directions</span>
+      <br/>You know the moment when both you and your dog lock eyes when they're about to eat something that you both know they shouldn't eat. Well, game on. Press the 'RACE' button to save your slippers, and use the Right Arrow key to race!
+    <br/><br/><span class="title">Race results</span></p>
+    <br/><span id="race-results"></p>
+  </div>
+  <!-- finish line image -->
+  <!-- Would like to randomly generate an image to put here on each round, if time -->
+  <div class="finish-object">
+    <img id="randomimage" src="assets/slippers.png" height="200px">
+  </div>
+</section>
 
 <!-- Race Course -->
 <div class="race-course">
@@ -44,11 +57,7 @@
   <div class="players" id="red-square"><img src="assets/dont-eat-that-self.JPG" height="100px" width="100px"></div>
 </div>
 
-<!-- Div layer for race info -->
-<div class="race-info">
-  <h3>Race results</h3>
-    <p id="race-results"></p>
-</div>
+
 
 
 </body>

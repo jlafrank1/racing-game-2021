@@ -13,10 +13,9 @@ body {
 h1 {
   font-family: 'Palette Mosaic', cursive;
   font-size: 3.5em;
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
   text-shadow: grey 1px 0 10px;
 }
-
 
 .players {
   height: 100px;
@@ -36,6 +35,12 @@ h1 {
   background-color: lightcoral;
   top: 100px;
   /* left: 10px; */
+}
+
+/* header is buttons and page title */
+header {
+  display: flex;
+  align-items: flex-start;
 }
 
 .game-buttons {
@@ -60,14 +65,6 @@ button:hover {
   background-color: cadetblue;
 }
 
-.race-element {
-  background-color: #A59ECE;
-  display: flex;
-  flex-flow: nowrap;
-  flex-direction: row
-  align-items: stretch;
-}
-
 .race-course {
   background-color: lightgrey;
   width: 100%;
@@ -79,6 +76,7 @@ button:hover {
   /* display: flex;
   justify-content: flex-start; */
 }
+
 
 @keyframes dancing-image {
   0% {
@@ -92,30 +90,25 @@ button:hover {
   }
 }
 
-.finish-object {
+
+.title {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* section is race results and image */
+section {
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  align-items: stretch;
-  margin: 25px;
 }
 
-#randomimage {
-  animation: dancing-image 2s 3;    /* this works, i just turned it off for now.  */
-}
-
-.finish-line {
-  width: 20px;
-  height: 400px;
-  background-color: #F5B43B;
-  display: flex;
-  justify-content: flex-end;
-
-}
-
+/* Container of Race Info */
 .race-info {
   background-color: #fff;
-  height: 200px;
-  width: 50%;
+  height: 250px;
+  width: 500px;
   display: flex;
   /* flex-flow: row nowrap; */
   flex-direction: column;
@@ -124,11 +117,25 @@ button:hover {
   align-items: center;
   /* align-content: center; */
   /* flex-grow: 1; */
-  /* padding: 20px; */
-  margin: 25px auto;
+  padding: 10px;
+  margin: 5px;
 }
 
+/* Paragraph of Race Results */
 #race-results {
   font-size: 2em;
   font-weight: bold;
+  margin: -30px 0 0 0;
+}
+
+.finish-object {
+  display: flex;
+  justify-content: center;
+  /* align-items: stretch; */
+  margin: 25px;
+  width: 30%;
+}
+
+#randomimage {
+  animation: dancing-image 2s 3;
 }
