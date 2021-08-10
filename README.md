@@ -33,3 +33,4 @@ No installation needed.
 Currently, the human player can keep incrimenting their style "left" properties infinitely. I'd like to figure out a way to keep the player from passing the finish line significantly. I might turn off the 'keydown' event listener at a certain event.
 
 ## Wireframes
+![wireframe](./assets/wireframe-gameplay.png)
