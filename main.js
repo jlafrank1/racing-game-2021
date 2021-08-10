@@ -77,6 +77,10 @@ const startGame = () => {
 //
 
 
+// ------- Remove Event Listener in startGame function ---------
+raceButton.removeEventListener('click', startGame)
+console.log('remove event listener in start game function')
+
 
 // ------- Function to Compare Positions -------
 const comparePositions = () => {
@@ -174,6 +178,10 @@ const clearAll = () => {
   let raceResultText = document.getElementById('race-results')
   raceResultText.textContent = ''
 
+  // add Race Button Event Listener back in
+  raceButton.addEventListener('click', startGame)
+  console.log('adding startGame function back')
+
 };
 
 
@@ -182,6 +190,9 @@ const clearAll = () => {
 raceButton.addEventListener('click', startGame)
 resetButton.addEventListener('click', clearAll)
 
+// when i run start 2x it breaks the game
+// remove an event listener from start game function
+// hit reset it adds it back
 
 // ----------------CODE I DIDN'T END UP USING: -----------------------
 
