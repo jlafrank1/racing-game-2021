@@ -48,12 +48,20 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-
-
 // ---------------- Event Listener for Race Button ------------------
 // get raceButton info (add event listener at bottom of code)
 const raceButton = document.getElementById('race');
 
+
+// ------- Animate Slippers on click of Race button -----------
+let slippers = document.getElementById('randomimage')
+
+const animateSlippers = () => {
+  slippers.className = 'classname';
+  console.log('function to animate slippers')
+};
+
+raceButton.addEventListener('click', animateSlippers)
 
 
 
@@ -75,7 +83,6 @@ const startGame = () => {
 //     }
 //   };
 //
-
 
 // ------- Remove Event Listener in startGame function ---------
 raceButton.removeEventListener('click', startGame)
@@ -182,6 +189,8 @@ const clearAll = () => {
   raceButton.addEventListener('click', startGame)
   console.log('adding startGame function back')
 
+  // clear class from #randomimage
+  slippers.className = '';
 };
 
 
@@ -189,6 +198,7 @@ const clearAll = () => {
 // event listener to listen for click of race button. kicks off function startGame, above.
 raceButton.addEventListener('click', startGame)
 resetButton.addEventListener('click', clearAll)
+
 
 // when i run start 2x it breaks the game
 // remove an event listener from start game function
