@@ -1,4 +1,5 @@
 # GA Project 0
+![screenshot](./assets/screenshot-game.png)
 
 ## This is Project #0: JavaScript Racer
 This goal of this project is to utilize separation of logic to create a racing game between two opponents. Other requirements include utilizing flexbox, media queries, and adhering to style guides for JavaScript and HTML/CSS.
