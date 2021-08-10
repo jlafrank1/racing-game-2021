@@ -7,6 +7,7 @@ const blueSquare = document.getElementById('blue-square');
 const redSquare = document.getElementById('red-square');
 // console.log(redSquare)
 
+
 // ------------- Starting Position Variables -----------------
 // had to set this variable because whenever i tried to move the player to the right without a variale, it would only move once, to +50px. i needed something i could increment.
 // let position = 0
@@ -14,24 +15,6 @@ const redSquare = document.getElementById('red-square');
 let positionBlue = 0;
 let positionRed = 0;
 
-/*
-Taking this out for now because blue square will be the computer
-// create event listener for blue square
-document.addEventListener('keydown', (e) => {
-  if (e.code === "ArrowUp") {
-    console.log("blue move")
-    // on arrow right, move right +50px
-    positionBlue += 50
-    let newPosition = positionBlue + 'px'
-    console.log(newPosition)
-
-    //i'm sorry but i'm mixing jquery with javascript right now. i'll try to figure out how to make this a vanilla command later.
-    // $('#blue-square').css('left', newPosition)
-    blueSquare.style.left = newPosition   // nailed it
-    // blueSquare.style.left += "50px"   // my first attempt at vanilla js to move the block 50px (it worked, but only on the first keydown.)
-  }
-});
-*/
 
 // --------------- Event Listener for Human Player ---------------
 // create event listener for red square
@@ -48,21 +31,10 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+
 // ---------------- Event Listener for Race Button ------------------
 // get raceButton info (add event listener at bottom of code)
 const raceButton = document.getElementById('race');
-
-
-// ------- Animate Slippers on click of Race button -----------
-let slippers = document.getElementById('randomimage')
-
-const animateSlippers = () => {
-  slippers.className = 'classname';
-  console.log('function to animate slippers')
-};
-
-raceButton.addEventListener('click', animateSlippers)
-
 
 
 
@@ -71,18 +43,6 @@ raceButton.addEventListener('click', animateSlippers)
 const startGame = () => {
   // console.log("Clicked button!") // check your work
 
-// // ------- first draft at function checkIfComplete ----
-// // build a function to see if the player has won the race.
-//   let checkIfComplete = () => {
-//     // if no car has completed the race
-//     if (isComplete == false) {
-//       // then set isComplete variable to true. a car will reach the end, then this function is run, so it will change isComplete to true
-//       isComplete = true;
-//     } else {
-//       place = 'second';
-//     }
-//   };
-//
 
 // ------- Remove Event Listener in startGame function ---------
 raceButton.removeEventListener('click', startGame)
@@ -205,6 +165,54 @@ resetButton.addEventListener('click', clearAll)
 // hit reset it adds it back
 
 // ----------------CODE I DIDN'T END UP USING: -----------------------
+
+
+
+// // ------- first draft at function checkIfComplete ----
+// // build a function to see if the player has won the race.
+//   let checkIfComplete = () => {
+//     // if no car has completed the race
+//     if (isComplete == false) {
+//       // then set isComplete variable to true. a car will reach the end, then this function is run, so it will change isComplete to true
+//       isComplete = true;
+//     } else {
+//       place = 'second';
+//     }
+//   };
+//
+
+
+
+/*
+Taking this out for now because blue square will be the computer
+// create event listener for blue square
+document.addEventListener('keydown', (e) => {
+  if (e.code === "ArrowUp") {
+    console.log("blue move")
+    // on arrow right, move right +50px
+    positionBlue += 50
+    let newPosition = positionBlue + 'px'
+    console.log(newPosition)
+
+    //i'm sorry but i'm mixing jquery with javascript right now. i'll try to figure out how to make this a vanilla command later.
+    // $('#blue-square').css('left', newPosition)
+    blueSquare.style.left = newPosition   // nailed it
+    // blueSquare.style.left += "50px"   // my first attempt at vanilla js to move the block 50px (it worked, but only on the first keydown.)
+  }
+});
+*/
+
+
+// // ------- Animate Slippers on click of Race button -----------
+// let slippers = document.getElementById('randomimage')
+//
+// const animateSlippers = () => {
+//   slippers.className = 'classname';
+//   console.log('function to animate slippers')
+// };
+//
+// raceButton.addEventListener('click', animateSlippers)
+
 
 
 

@@ -157,11 +157,6 @@ p {
   animation: dancing-image 2s 3;
 }
 
-.classname {
-  /* animation: dancing-image 2s 3; */
-  background-color: pink;
-}
-
 @media screen and (max-device-width: 950px) {
   h1 {
     font-size: 2.5em;
@@ -170,3 +165,13 @@ p {
     height: 150px;
   }
 }
+
+
+
+/* .classname { */
+  /* animation-name: dancing-image; */
+  /* animation-duration: 2s; */
+  /* animation-iteration-count: 5; */
+  /* background-color: pink; */
+  /* animation-timing-function: ease; */
+/* } */
