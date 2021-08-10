@@ -29,6 +29,7 @@ h1 {
   /* background-color: #A59ECE; */
   top: 50px;
   /* left: 10px; */
+  transform: scaleX(-1);
 }
 
 #red-square {
