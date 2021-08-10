@@ -50,6 +50,7 @@ console.log('remove event listener in start game function')
 
 
 // ------- Function to Compare Positions -------
+// TOFIX: CHANGE THIS TO JAVASCRIPT IF POSSIBLE -------
 const comparePositions = () => {
 
   let r = $("#red-square")
@@ -87,18 +88,7 @@ let blueRaceTime = Math.floor((Math.random() * 10000) + 1);
 
 
 // ------------- Animation for Computer Player -----------------------
-// build an animation. move the car the width of the racetrack. left: raceTrackWidth. include the time it takes the animation to run for, using the race time variable.
-// include a call back for once the animation is complete. run the function checkIfComplete, and give info about if the race is complete.
-// $('#blue-square').animate({
-//   // name the animation
-//   left: raceTrackWidth
-//   // set the time of the animation
-// }, blueRaceTime, function() {
-//   // callback to check if animation is complete
-//   checkIfComplete();
-//   // report on results
-//   $('#race-results1').text(`Blue player finished in ${place} place and clocked in at ${blueRaceTime} milliseconds!`);
-// });
+// build an animation. move the player the width of the racetrack. left: raceTrackWidth. include the time it takes the animation to run for, using the race time variable. include a call back for once the animation is complete. run the function checkIfComplete, and give info about if the race is complete.
 
 /*
 Logic for checking coordinates and how it relates to the race:
@@ -116,8 +106,6 @@ $('#blue-square').animate({
 }, blueRaceTime, function() {
   // callback to check if animation is complete
   comparePositions();
-  // // report on results
-  // $('#race-results1').text(`Blue player finished in ${place} place and clocked in at ${blueRaceTime} milliseconds!`);
 });
 
 
@@ -126,8 +114,7 @@ $('#blue-square').animate({
 
 
 // -------- Variable for Reset Button -------------------------
-// reset button
-// onClick, reset the css left property to zero of the players
+// onClick of reset button, reset the css left property to zero of the players
 // clear the raceInfo span with an empty string
 const resetButton = document.getElementById('reset')
 
@@ -145,12 +132,17 @@ const clearAll = () => {
   let raceResultText = document.getElementById('race-results')
   raceResultText.textContent = ''
 
+
+  // Bug: if I hit start 2x in a row, it breaks the game
+  // Fix: Remove startGame event listener from start Button
+  // and add it back on click of Reset button
+
   // add Race Button Event Listener back in
   raceButton.addEventListener('click', startGame)
   console.log('adding startGame function back')
 
-  // clear class from #randomimage
-  slippers.className = '';
+  // // clear class from #randomimage
+  // slippers.className = '';
 };
 
 
@@ -160,13 +152,20 @@ raceButton.addEventListener('click', startGame)
 resetButton.addEventListener('click', clearAll)
 
 
-// when i run start 2x it breaks the game
-// remove an event listener from start game function
-// hit reset it adds it back
 
 // ----------------CODE I DIDN'T END UP USING: -----------------------
 
-
+// 1st draft of animation the blue player and reporting on race results. used starting code from the youtube video linked at the bottom.
+// $('#blue-square').animate({
+//   // name the animation
+//   left: raceTrackWidth
+//   // set the time of the animation
+// }, blueRaceTime, function() {
+//   // callback to check if animation is complete
+//   checkIfComplete();
+//   // report on results
+//   $('#race-results1').text(`Blue player finished in ${place} place and clocked in at ${blueRaceTime} milliseconds!`);
+// });
 
 // // ------- first draft at function checkIfComplete ----
 // // build a function to see if the player has won the race.
