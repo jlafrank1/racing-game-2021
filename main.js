@@ -109,6 +109,7 @@ Logic for checking coordinates and how it relates to the race:
   a. then blueSquare wins
 */
 
+// TOFIX: THIS IS IN JQUERY, NEED TO UPDATE TO JAVASCRIPT
 // 2nd draft with new callback function
 $('#blue-square').animate({
   // set the animation
