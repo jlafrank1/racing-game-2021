@@ -18,7 +18,7 @@ let positionRed = 0;
 
 // --------------- Event Listener for Human Player ---------------
 // create event listener for red square
-document.addEventListener('keydown', (e) => {
+const addKeydownListener = (e) => {
   if (e.code === "ArrowRight") {
     console.log("red move")
     // on arrow up, move right +30px
@@ -29,7 +29,23 @@ document.addEventListener('keydown', (e) => {
     // $('#red-square').css('left', newPosition)
     redSquare.style.left = newPosition
   }
-});
+}
+
+
+document.addEventListener('keydown', addKeydownListener)
+// // Originial code
+// document.addEventListener('keydown', (e) => {
+//   if (e.code === "ArrowRight") {
+//     console.log("red move")
+//     // on arrow up, move right +30px
+//     redSquare.style.left += "30px"
+//     positionRed += 30
+//     let newPosition = positionRed + 'px'
+//     console.log(newPosition)
+//     // $('#red-square').css('left', newPosition)
+//     redSquare.style.left = newPosition
+//   }
+// });
 
 
 // ---------------- Event Listener for Race Button ------------------
