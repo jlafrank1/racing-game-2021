@@ -212,6 +212,11 @@ main {
   animation: dancing-image 2s;
 }
 
+#man-vs-dog {
+  display: flex;
+
+}
+
 a {
   color: goldenrod;
 }
