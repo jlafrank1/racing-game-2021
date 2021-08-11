@@ -35,7 +35,7 @@ Currently, the human player can keep incrimenting their style "left" properties 
 
 ## Wireframes
 ### Wireframe for Landing Page
-![wireframe](.assets/wireframe-landingpage.png)
+![wireframe](./assets/wireframe-landingpage.png)
 
 ### Wireframe for Game Play
 ![wireframe](./assets/wireframe-gameplay.png)
