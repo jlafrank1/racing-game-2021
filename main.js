@@ -17,7 +17,7 @@ let positionRed = 0;
 
 
 // --------------- Event Listener for Human Player ---------------
-// create event listener for red square
+// create function for arrowright keydown event. adds 30px to style left of red player, with incrementing value.
 const addKeydownListener = (e) => {
   if (e.code === "ArrowRight") {
     console.log("red move")
@@ -31,21 +31,8 @@ const addKeydownListener = (e) => {
   }
 }
 
-
-document.addEventListener('keydown', addKeydownListener)
-// // Originial code
-// document.addEventListener('keydown', (e) => {
-//   if (e.code === "ArrowRight") {
-//     console.log("red move")
-//     // on arrow up, move right +30px
-//     redSquare.style.left += "30px"
-//     positionRed += 30
-//     let newPosition = positionRed + 'px'
-//     console.log(newPosition)
-//     // $('#red-square').css('left', newPosition)
-//     redSquare.style.left = newPosition
-//   }
-// });
+// // create event listener for red square
+// document.addEventListener('keydown', addKeydownListener)
 
 
 // ---------------- Event Listener for Race Button ------------------
@@ -58,6 +45,10 @@ const raceButton = document.getElementById('race');
 // function to start game
 const startGame = () => {
   // console.log("Clicked button!") // check your work
+
+  // ------- Add Event Listener for Keydown in startGame function ---------
+  document.addEventListener('keydown', addKeydownListener)
+  console.log('add event listener for keydown in start game function')
 
 
 // ------- Remove Event Listener in startGame function ---------
@@ -170,6 +161,21 @@ resetButton.addEventListener('click', clearAll)
 
 
 // ----------------CODE I DIDN'T END UP USING: -----------------------
+
+// // Originial code for adding event listener on keydown event
+// document.addEventListener('keydown', (e) => {
+//   if (e.code === "ArrowRight") {
+//     console.log("red move")
+//     // on arrow up, move right +30px
+//     redSquare.style.left += "30px"
+//     positionRed += 30
+//     let newPosition = positionRed + 'px'
+//     console.log(newPosition)
+//     // $('#red-square').css('left', newPosition)
+//     redSquare.style.left = newPosition
+//   }
+// });
+
 
 // 1st draft of animation the blue player and reporting on race results. used starting code from the youtube video linked at the bottom.
 // $('#blue-square').animate({
