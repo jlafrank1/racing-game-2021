@@ -16,7 +16,7 @@ h1 {
   font-family: 'Sigmar One', cursive;
   font-size: 4em;
   margin: 0 auto 20px auto;
-  text-shadow: grey 1px 0 10px;
+  text-shadow: aquamarine 1px 0 10px;
 }
 
 .players {
@@ -134,7 +134,7 @@ p {
   /* flex-grow: 1; */
   padding: 10px;
   margin: 5px;
-  box-shadow: 0px 0px 5px 3px 7fffd4;
+  box-shadow: 0px 0px 5px 3px #ccc;
 }
 
 /* Paragraph of Race Results */
