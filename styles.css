@@ -134,7 +134,7 @@ p {
   /* flex-grow: 1; */
   padding: 10px;
   margin: 5px;
-  box-shadow: 0px 0px 5px 3px #ccc;
+  box-shadow: 0px 0px 5px 3px 7fffd4;
 }
 
 /* Paragraph of Race Results */
@@ -191,14 +191,25 @@ main {
   height: 250px;
 }
 
+#main-slippers:hover {
+  animation: dancing-image 2s;
+}
+
 #main-doggo {
   height: 400px;
   margin: 20px 100px 0 0;
 }
 
+#main-doggo:hover {
+  animation: dancing-image 2s;
+}
 #main-human {
   height: 400px;
   margin: 10px 0 0 100px;
+}
+
+#main-human:hover {
+  animation: dancing-image 2s;
 }
 
 a {
