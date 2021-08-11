@@ -31,6 +31,10 @@ const addKeydownListener = (e) => {
   }
 }
 
+const removeKeydownListener = () => {
+  document.removeEventListener('keydown', addKeydownListener)
+}
+
 // // create event listener for red square
 // document.addEventListener('keydown', addKeydownListener)
 
@@ -112,11 +116,24 @@ $('#blue-square').animate({
   // set the time of the animation
 }, blueRaceTime, function() {
   // callback to check if animation is complete
-  comparePositions();
+  comparePositions(),  //;,
+  // remove keydown Listener
+  // removeKeydownListener()
+  console.log('compare positions'),
+  removeKeydownListener(),
+  console.log('remove event listener')
+
 });
 
+// 3rd draft, refactoring animation function from jQuery to JavaScript
+// blueSquare.animate({})
 
 };     // ends the startGame function
+
+// //want to add this:
+// , function() {
+//     document.addEventListener('keydown', addKeydownListener)
+//     console.log('remove event listener for keydown')
 
 
 
