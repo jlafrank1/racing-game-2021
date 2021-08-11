@@ -31,7 +31,7 @@ I struggled at first to solve the problem of reporting a winner of the game. At 
 No installation needed.
 
 ## Unsolved Problems
-Currently, the human player can keep incrimenting their style "left" properties infinitely. I'd like to figure out a way to keep the player from passing the finish line significantly. I might turn off the 'keydown' event listener at a certain event.
+~~Currently, the human player can keep incrimenting their style "left" properties infinitely. I'd like to figure out a way to keep the player from passing the finish line significantly. I might turn off the 'keydown' event listener at a certain event.~~ Fixed 08.11.21
 
 ## Wireframes
 ### Wireframe for Landing Page
